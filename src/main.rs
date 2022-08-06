@@ -29,7 +29,7 @@ async fn test() {
     ]);
 
     for (k, v) in quotes.iter() {
-        match bourso_scrape::scrape::scrape_isin(k).await {
+        match bourso_scrap::scrap::scrape_isin(k).await {
             Ok(quote) => println!("ETF: {}, Quote: {}", v, quote),
             Err(_) => println!("Fail getting quote for: {} - {}", v, k),
         };
@@ -41,7 +41,7 @@ async fn root() -> &'static str {
 }
 
 async fn get_isin_value(Path(isin): Path<String>) -> Json<ISIN> {
-    let res = bourso_scrape::scrape::scrape_isin(&isin).await;
+    let res = bourso_scrap::scrap::scrape_isin(&isin).await;
 
     Json(ISIN {
         value: res.unwrap_or_default().parse::<f64>().unwrap_or_default(),
