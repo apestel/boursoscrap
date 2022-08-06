@@ -1,0 +1,16 @@
+[package]
+name = "boursoscrap"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = { version="0.11.11" }
+scraper = "0.13.0"
+env_logger = "0.9.0"
+log = "0.4.17"
+# cssparser = "0.29.6"
+serde = {version = "1.0.139", features = ["derive"]}
+axum = "0.5.13"
+tokio =  {version = "1.20.0", features = ["full"]}
