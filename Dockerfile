@@ -15,7 +15,7 @@ RUN RUSTFLAGS=-Clinker=musl-gcc /root/.cargo/bin/cargo build --release --target=
 # RUN RUSTFLAGS=-Clinker=musl-gcc /root/.cargo/bin/cargo build --release --target=x86_64-unknown-linux-musl
 # RUN /root/.cargo/bin/cargo build --release --target=x86_64-unknown-linux-musl
 
-FROM alpine:latest
+FROM clux/muslrust:stable
 WORKDIR /app
 COPY --from=cargo-build /boursoscrap/target/x86_64-unknown-linux-musl/release/boursoscrap /app/boursoscrap
 EXPOSE 3000
