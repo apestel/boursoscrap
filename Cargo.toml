@@ -13,4 +13,4 @@ log = "0.4.17"
 # cssparser = "0.29.6"
 serde = {version = "1.0.139", features = ["derive"]}
 axum = "0.5.13"
-tokio =  {version = "1.20.0", features = ["full"]}
+tokio =  {version = "1.20.4", features = ["full"]}
